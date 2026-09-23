@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="post" id="article">
+  <div class="row">
+    <div class="col-xs-12">
+      {{ partial "header.html" . }}
+      <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        <div class="row post-desc">
+          <div class="col-xs-6">
+            <time class="post-date" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+          </div>
+          <div class="col-xs-6">
+            <div class="post-author"><a target="_blank" href="{{ site.Params.authorURL }}">@{{ site.Params.author }}</a></div>
+          </div>
+        </div>
+      </header>
+      <div class="post-content markdown-body">{{ .Content }}</div>
+      {{ with site.Params.subscribeURL }}
+      <div class="row">
+        <div class="col-xs-12">
+          <br><br><p>Subscribe：<a target="_blank" href="{{ . }}"><b>Newsletter</b></a></p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</article>
+{{ end }}

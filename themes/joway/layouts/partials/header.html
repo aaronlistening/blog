@@ -1,0 +1,17 @@
+<div class="site-header">
+  <header>
+    <h1 class="header-title"><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></h1>
+    {{ with site.Params.subtitle }}<div class="header-subtitle">{{ . }}</div>{{ end }}
+  </header>
+  <div class="row end-md header-items">
+    <div class="header-item-left">
+      <button id="theme-toggle" onclick="toggleTheme()" class="theme-toggle" aria-label="切换深色/浅色模式" title="切换深色/浅色模式">&#127769;</button>
+    </div>
+    {{ range site.Menus.main }}
+    {{ $external := hasPrefix .URL "http" }}
+    <div class="header-item"><a href="{{ .URL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></div>
+    {{ end }}
+  </div>
+  <div class="row"></div>
+  <div class="header-line"></div>
+</div>

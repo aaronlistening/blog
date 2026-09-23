@@ -1,0 +1,5 @@
+name = "joway"
+license = "MIT"
+description = "A minimal, typography-first Hugo blog theme inspired by blog.joway.io"
+author = "Aaron"
+min_version = "0.100.0"

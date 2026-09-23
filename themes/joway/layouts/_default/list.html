@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="posts">
+  <div class="row">
+    <div class="col-xs-12">
+      {{ partial "header.html" . }}
+      <div id="posts-list">
+        {{ $pages := .Pages }}
+        {{ if .IsHome }}{{ $pages = site.RegularPages }}{{ end }}
+        {{ range $pages.GroupByDate "2006" }}
+        <section>
+          <h2 class="site-date-catalog">{{ .Key }}</h2>
+          {{ range .Pages.ByDate.Reverse }}
+          {{ partial "post-line.html" . }}
+          {{ end }}
+        </section>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

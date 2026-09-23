@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="posts">
+  <div class="row">
+    <div class="col-xs-12">
+      {{ partial "header.html" . }}
+      <div id="posts-list">
+        <h2 class="site-date-catalog">{{ .Title }}</h2>
+        {{ range .Pages.ByTitle }}
+        <div class="row posts-line">
+          <div class="col-xs-12">
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            <span class="header-subtitle">({{ len .Pages }})</span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="posts">
+  <div class="row">
+    <div class="col-xs-12">
+      {{ partial "header.html" . }}
+      <div id="posts-list">
+        <h2 class="taxonomy-term">{{ .Title }}</h2>
+        {{ range .Pages.ByDate.Reverse }}
+        {{ partial "post-line.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

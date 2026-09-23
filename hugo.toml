@@ -1,0 +1,32 @@
+baseURL = "https://example.com/"
+locale = "zh-CN"
+title = "Random Thoughts"
+theme = "joway"
+enableRobotsTXT = true
+hasCJKLanguage = true
+
+[params]
+  subtitle = "100% human native."
+  author = "Aaron"
+  authorURL = "https://example.com"
+  description = "100% human native."
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = "github"
+
+[menu]
+  [[menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 10
+  [[menu.main]]
+    name = "About"
+    url = "https://example.com"
+    weight = 20
